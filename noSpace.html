@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>去除空格</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.jpg" alt="Logo">
+    </div>
+    <h1 id="title"></h1>
+    <div class="input-output-container">
+      <div class="input-container">
+        <textarea id="inputText" rows="10" placeholder="输入内容" oninput="countCharacters(this, 'inputCount')"></textarea>
+        <p class="character-count"><span id="inputCharacterCountLabel"></span>: <span id="inputCount">0</span></p>
+        <div class="button-container">
+          <button onclick="removeSpaces()" id="removeSpacesButton"></button>
+        </div>
+      </div>
+      <div class="output-container">
+        <textarea id="outputText" rows="10" readonly oninput="countCharacters(this, 'outputCount')"></textarea>
+        <p class="character-count"><span id="outputCharacterCountLabel"></span>: <span id="outputCount">0</span></p>
+        <div class="button-container">
+          <button onclick="copyToClipboard()" id="copyButton"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="language-switcher">
+    <select onchange="changeLanguage(this.value)">
+      <option value="en">English</option>
+      <option value="zh">中文（简体）</option>
+      <option value="zh_FT">中文（繁体）</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+      <option value="nl">Nederlands</option>
+      <option value="de">Deutsch</option>
+      <option value="fr">Français</option>
+      <option value="ru">Русский</option>
+      <option value="it">Italiano</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
