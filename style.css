@@ -122,3 +122,14 @@ html, body {
     background-color: black;
     color: white;
   }
+  /* 媒体查询：在640宽度以下应用不同的布局 */
+  @media (max-width: 640px) {
+    .input-container {
+      flex-direction: column !important;
+      height: auto;
+    }
+    .output-container {
+      margin-top: 20px !important;
+      height: auto;
+    }
+  }
