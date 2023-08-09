@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>remove spaces -remove spaces from any text</title>
+  <title>remove extra spaces -remove spaces from any text</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Online space removal tool to quickly remove spaces from text without installation and for free.">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="icon" type="image/png" href="../favicon.ico">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WX4B2WWXR"></script>
 <script>
@@ -20,7 +20,7 @@
 <body>
   <div class="container">
     <div class="logo">
-      <img src="logo.jpg" alt="Logo">
+      <img src="../logo.jpg" alt="Logo">
     </div>
     <h1 id="title"></h1>
     <div class="input-output-container">
@@ -28,7 +28,7 @@
         <textarea id="inputText" rows="10" placeholder="输入内容" oninput="countCharacters(this, 'inputCount')"></textarea>
         <p class="character-count"><span id="inputCharacterCountLabel"></span>: <span id="inputCount">0</span></p>
         <div class="button-container">
-          <button onclick="removeSpaces()" id="removeSpacesButton"></button>
+          <button onclick="removeExtraSpaces()" id="removeSpacesButton"></button>
         </div>
       </div>
       <div class="output-container">
@@ -62,6 +62,6 @@
     <!-- 其他导航链接 -->
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="./extra.js" defer></script>
 </body>
 </html>
