@@ -7,6 +7,8 @@ const languages = {
       removeSpacesButton: "Remove Extra Spaces",
       copyButton: "Copy",
       placeholder:"Input something...",
+      toIndex:"Home",
+      toTools:"Tools",
     },
     zh: {
       title: "删除多余空格",
@@ -15,6 +17,8 @@ const languages = {
       removeSpacesButton: "去除空格",
       copyButton: "复制",
       placeholder:"输入内容...",
+      toIndex:"首页",
+      toTools:"工具",
     },
     ja: {
       title: "スペースの削除",
@@ -23,6 +27,8 @@ const languages = {
       removeSpacesButton: "スペース除去",
       copyButton: "コピー",
       placeholder:"入力...",
+      toIndex:"ホームページ",
+      toTools:"ツール",
     },
     ko: {
         title: "공백 제거 도구",
@@ -30,7 +36,9 @@ const languages = {
         outputCharacterCountLabel: "출력 문자 수",
         removeSpacesButton: "공백 제거",
         copyButton: "복사",
-        placeholder: "텍스트를 입력하세요..."
+        placeholder: "텍스트를 입력하세요...",
+        toIndex:"홈",
+        toTools:"도구",
     },
     nl: {
         title: "Verwijder overtollige spaties",
@@ -39,6 +47,8 @@ const languages = {
         removeSpacesButton: "Verwijder spaties",
         copyButton: "Kopiëren",
         placeholder: "Voer iets in...",
+        toIndex:"Startpagina",
+        toTools:"Gereedschap",
     },
     de: {
         title: "Leerzeichen entfernen",
@@ -47,6 +57,8 @@ const languages = {
         removeSpacesButton: "Leerzeichen entfernen",
         copyButton: "Kopieren",
         placeholder: "Etwas eingeben...",
+        toIndex:"Startseite",
+        toTools:"Werkzeuge",
     },
     fr: {
         title: "Supprimer les espaces superflus",
@@ -55,6 +67,8 @@ const languages = {
         removeSpacesButton: "Supprimer les espaces",
         copyButton: "Copier",
         placeholder: "Saisissez quelque chose...",
+        toIndex:"Page d'accueil",
+        toTools:"Outils",
     },
     zh_FT: {
         title: "刪除多餘空格",
@@ -63,6 +77,8 @@ const languages = {
         removeSpacesButton: "移除空格",
         copyButton: "複製",
         placeholder: "輸入內容...",
+        toIndex:"首頁",
+        toTools:"工具",
     },
     ru: {
         title: "Удалить лишние пробелы",
@@ -71,6 +87,8 @@ const languages = {
         removeSpacesButton: "Удалить пробелы",
         copyButton: "Копировать",
         placeholder: "Введите что-нибудь...",
+        toIndex:"Главная страница",
+        toTools:"Инструменты",
     },
     it: {
         title: "Rimuovere gli spazi inutili",
@@ -79,6 +97,8 @@ const languages = {
         removeSpacesButton: "Rimuovi spazi",
         copyButton: "Copia",
         placeholder: "Inserisci qualcosa...",
+        toIndex:"Pagina iniziale",
+        toTools:"Strumenti",
     },
     es: {
         title: "Eliminar espacios en blanco innecesarios",
@@ -87,6 +107,8 @@ const languages = {
         removeSpacesButton: "Eliminar espacios",
         copyButton: "Copiar",
         placeholder: "Ingrese algo...",
+        toIndex:"Página de inicio",
+        toTools:"Herramientas",
     },
   };
   
@@ -99,6 +121,8 @@ const languages = {
     document.getElementById("outputCharacterCountLabel").textContent = languageData.outputCharacterCountLabel;
     document.getElementById("removeSpacesButton").textContent = languageData.removeSpacesButton;
     document.getElementById("copyButton").textContent = languageData.copyButton;
+    document.getElementById("toIndex").textContent = languageData.toIndex;
+    document.getElementById("toTools").textContent = languageData.toTools;
     const inputTextElement = document.getElementById("inputText");
     inputTextElement.placeholder = languageData.placeholder;
   }
@@ -148,7 +172,7 @@ window.addEventListener('resize', function() {
     var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
     // 设置限制宽度
-    var maxWidth = 800; // 设置你想限制的宽度
+    var maxWidth = 640; // 设置你想限制的宽度
 
     // 如果窗口宽度小于限制宽度，禁用用户调整窗口大小
     if (windowWidth < maxWidth) {
