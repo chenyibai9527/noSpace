@@ -16,7 +16,7 @@ html, body {
     margin:10px;
     height:auto;
   }
-  img {
+  #logo {
     max-width: 100%;
     width: 80px;
     border-radius: 50%;
@@ -158,6 +158,11 @@ html, body {
     background-color: #5b5b5b;
   }
   
+  .product-hunt {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
 
   /* 媒体查询：在640宽度以下应用不同的布局 */
   @media (max-width: 640px) {
