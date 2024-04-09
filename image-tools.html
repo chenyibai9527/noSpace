@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>No spaces:A free tool to remove spaces and texts from anything</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online space removal tool to quickly remove spaces from text without installation and for free.">
+    <meta name="keywords" content="nospaces,No spaces,Remove spaces, Remove text, Remove spaces from text, Remove spaces from text online, Remove spaces from text for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spacesfrom text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Remove spaces from text online for free, Removespaces from text online for free, Remove spaces from text online for free, Remove">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; text-align: center; }
+        .image-display { margin-top: 20px; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Image Compression Tool</h2>
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="compressImage()">Compress Image</button>
+        <div class="image-display" id="imageDisplay"></div>
+    </div>
+
+    <script>
+        function compressImage() {
+            const input = document.getElementById('imageInput');
+            if (!input.files || !input.files[0]) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    // 设置压缩后的图像尺寸
+                    const maxWidth = 800; // 例如，最大宽度800px
+                    const maxHeight = 600; // 最大高度600px
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxWidth) {
+                            height *= maxWidth / width;
+                            width = maxWidth;
+                        }
+                    } else {
+                        if (height > maxHeight) {
+                            width *= maxHeight / height;
+                            height = maxHeight;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    // 将canvas转换为图像
+                    const compressedImage = canvas.toDataURL('image/jpeg', 0.7); // 第二个参数是质量，范围0-1
+                    displayCompressedImage(compressedImage);
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        function displayCompressedImage(src) {
+            const imageDisplay = document.getElementById('imageDisplay');
+            imageDisplay.innerHTML = '';
+            const img = new Image();
+            img.src = src;
+            imageDisplay.appendChild(img);
+        }
+    </script>
+</body>
+</html>
